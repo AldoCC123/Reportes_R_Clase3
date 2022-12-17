@@ -1,0 +1,43 @@
+---
+title: "Regresión Logística"
+author: "Reporte con R - Clase 3"
+date: "2022-12-17"
+output: 
+  html_document:
+    toc: yes
+    toc_float:
+      collapse: yes
+    code_folding: hide
+    code_download: yes
+    number_sections: yes
+    theme: paper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Introduccion 
+
+La regresion logistica es uno de los metodos comunes para predecir el valor de la variable de respuesta $Y$ de tipo categorica, en funcion de conjunto de variables predictorias. Algunos elemplos de esta varaible $Y$ pueden ser:
+
+* $Y=0$ o $Y=1$
+* $Y=$ pago su credito o $Y=$ no pago su credito
+
+El objetivo de este tipo de modelos en el de estimar la probabilidad del evento interes.
+$$P[Y=1 | X=x]$$
+Usaremos la funcion logit para estas cuentas :
+$$P[Y=1 | X=x] = \frac{e^{\beta^{T}x}}{1+e^{\beta^{T}x}}$$
+
+## Ejemplo de R
+
+```{r Carga librerias}
+library(ggplot2)
+library(corrplot)
+library(car)
+library(knitr)
+library(PerformanceAnalytics)
+library(cowplot)
+```
+
+
+# 2. WEE
