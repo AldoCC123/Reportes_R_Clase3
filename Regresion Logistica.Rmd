@@ -38,6 +38,33 @@ library(knitr)
 library(PerformanceAnalytics)
 library(cowplot)
 ```
+# Cargar datos
+```{r Cargar Datos, include=TRUE, message=FALSE}
+titanic <- read.csv("https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv")
+colnames(titanic)
+```
+## Algunos Graficos
+
+Consideremos:
+
+* La variable dependiente Survived
+* La variables Pclass
+* La variable Age
+
+```{r}
+titanic$Survived <- as.factor(titanic$Survived)
+titanic$Pclass <- as.factor(titanic$Pclass)
+ggplot2::ggplot(data = titanic, mapping = aes(Survived, fill = Survived)) + 
+  geom_bar(position = "dodge")+
+  scale_fill_manual(values = c("red","blue"))
+```
 
 
-# 2. WEE
+
+
+
+
+
+
+
+
